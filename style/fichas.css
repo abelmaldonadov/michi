@@ -1,0 +1,23 @@
+.ficha{
+    display: inline-block;
+    width: calc(90vw/3.1);
+    height: calc(90vw/3.1);
+    border: none;
+    margin: 0;
+    padding: 0;
+    max-width: 195px;
+    max-height: 195px;
+    cursor: pointer;
+}
+.fichaX{
+    background-image: url("../assets/x.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: initial;
+}
+.fichaO{
+    background-image: url("../assets/o.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: initial;
+}

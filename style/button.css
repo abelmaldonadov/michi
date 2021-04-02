@@ -1,0 +1,27 @@
+.btn{
+    background-color: mediumvioletred;
+    border: none;
+    color: mintcream;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+    padding: 20px;
+}
+.btn:hover{
+    background-color: rgb(207, 78, 160);
+}
+.btn:active{
+    background-color: rgb(158, 14, 105);
+}
+
+.btn_group{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn_group div{
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michi</title>
 
-    <link rel="stylesheet" href="style/michi.css">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/fichas.css">
+    <link rel="stylesheet" href="style/alert.css">
 </head>
 <body>
     <section id="app">
@@ -14,23 +17,42 @@
 
         <!-- TABLERO -->
         <main class="tablero">
-            <div class="ficha fichaO"></div>
-            <div class="ficha"></div>
-            <div class="ficha"></div>
-            <div class="ficha"></div>
-            <div class="ficha fichaX"></div>
-            <div class="ficha"></div>
-            <div class="ficha fichaO"></div>
-            <div class="ficha"></div>
-            <div class="ficha"></div>
+            <div id="pos11" class="ficha fichaO"></div>
+            <div id="pos12" class="ficha"></div>
+            <div id="pos13" class="ficha"></div>
+            <div id="pos21" class="ficha"></div>
+            <div id="pos22" class="ficha fichaO"></div>
+            <div id="pos23" class="ficha"></div>
+            <div id="pos31" class="ficha"></div>
+            <div id="pos32" class="ficha"></div>
+            <div id="pos33" class="ficha fichaX"></div>
         </main>
 
-        <!-- BOTONES -->
+        <!-- CONTROL -->
         <div class="control">
-            <button id="start">Comenzar</button>
+            <div class="btn_group">
+                <div>
+                    <button class="btn">Fácil</button>
+                </div>
+                <div>
+                    <button class="btn">Difícil</button>
+                </div>
+            </div>
+            <button class="btn" id="start">Comenzar</button>
+        </div>
+
+        <!-- ALERTA -->
+        <div class="alert hidden">
+            <div class="alert_content">
+                <div class="alert_header"></div>
+                <div class="alert_body"></div>
+                <div class="alert_footer">
+                    <button class="btn" id="ok">Ok</button>
+                </div>
+            </div>
         </div>
         
     </section>
-    <script src="scripts/core.js"></script>
+    <script src="scripts/Core.js"></script>
 </body>
 </html>
