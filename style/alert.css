@@ -3,8 +3,10 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 999;
     display: flex;
     justify-self: center;
     align-self: center;
@@ -15,9 +17,8 @@
     margin: auto;
     position: relative;
 }
-.alert_header{
-    /*  */
-}
+/* .alert_header{
+} */
 .alert_body{
     width: 80vw;
     height: 30vw;
@@ -37,6 +38,5 @@
     text-align: center;
     font-size: 30px;
 }
-.alert_footer{
-    /*  */
-}
+/* .alert_footer{
+} */
