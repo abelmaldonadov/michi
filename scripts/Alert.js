@@ -24,6 +24,7 @@ class Alert
     
     hideAlert() {
         document.querySelector(".alert").classList.add("hidden")
+        iniciarPartida()
     }
 }
 const ALERT = new Alert()

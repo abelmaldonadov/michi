@@ -13,15 +13,3 @@
 .btn:active{
     background-color: rgb(158, 14, 105);
 }
-
-.btn_group{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn_group div{
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
