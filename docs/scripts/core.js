@@ -1,3 +1,9 @@
+localStorage.getItem("modo")
+localStorage.getItem("nombre")
+localStorage.getItem("ficha")
+
+console.log(localStorage.getItem("modo") + localStorage.getItem("nombre") + localStorage.getItem("ficha"))
+
 const HUMAN = "Humano"
 const BOOT = "Boot"
 
@@ -10,8 +16,8 @@ const PERDEDOR = "Has perdido"
 const EMPATE = "Tenemos un empate"
 
 // ESTABLECER JUGADORES
-const PLAYER_1 = new Player("Jugador 1",HUMAN,O)
-const PLAYER_2 = new Player("Jugador 2",BOOT,X)
+const PLAYER_1 = new Player("PLAYER 1",HUMAN,O)
+const PLAYER_2 = new Player("PLAYER 2",BOOT,X)
 
 // CREAR PARTIDA
 const PARTIDA = new Partida(PLAYER_1,PLAYER_2)
@@ -21,6 +27,7 @@ const arrPos = document.querySelectorAll(".ficha")
 
 function iniciarPartida() {
     PARTIDA.limpiarTablero()
+    PARTIDA.siguienteTurno()
     continuarPartida()
 }
 
@@ -56,20 +63,20 @@ function obtenerPosDisp() {
     return arrPosDisp
 }
 
-function jugarHuman(e) {
+function jugarHumano(e) {
     let posSel = e.target
     const JUGADA = new Jugada(PARTIDA.getTurno(),PARTIDA.getOponente())
-    JUGADA.jugarHuman(posSel)
-    
-    let ganador = PARTIDA.evaluarGanador()
-    if (ganador) {
-        ALERT.showAlert(PARTIDA.getTurno().getName())
-        return
+    if (JUGADA.jugarHuman(posSel)) {
+        let ganador = PARTIDA.evaluarGanador()
+        if (ganador) {
+            ALERT.showAlert(PARTIDA.getTurno().getName())
+            return
+        }
+        if (obtenerPosDisp().length == 0) {
+            ALERT.showAlert(EMPATE)
+            return
+        }
+        PARTIDA.siguienteTurno()
+        continuarPartida()
     }
-    if (obtenerPosDisp().length == 0) {
-        ALERT.showAlert(EMPATE)
-        return
-    }
-    PARTIDA.siguienteTurno()
-    continuarPartida()
 }

@@ -41,18 +41,21 @@ class Jugada
         if (!posSel.classList.contains(O) &&  !posSel.classList.contains(X)) {
             posSel.classList.add(this.player.getFicha())
             this.desactivarFichas()
+            return true
+        } else {
+            return false
         }
     }
 
     activarFichas() {
         for (const pos of arrPos) {
-            pos.addEventListener("click",jugarHuman)
+            pos.addEventListener("click",jugarHumano)
         }
     }
     
     desactivarFichas() {
         for (const pos of arrPos) {
-            pos.removeEventListener("click",jugarHuman)
+            pos.removeEventListener("click",jugarHumano)
         }
     }
 

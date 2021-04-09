@@ -10,6 +10,11 @@ body{
     text-align: center;
     color: rgb(131, 151, 207);
 }
+.subtitulo{
+    font-size: x-large;
+    text-align: center;
+    color: rgb(179, 191, 223);
+}
 .tablero{
     /* background-color: rgb(137, 182, 184); */
     background-image: url("../assets/tablero.svg");
