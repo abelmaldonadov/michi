@@ -11,5 +11,9 @@
     background-color: rgb(207, 78, 160);
 }
 .btn:active{
-    background-color: rgb(158, 14, 105);
+    background-color: rgb(179, 35, 126);
+}
+
+.btn_block{
+    width: 100%;
 }

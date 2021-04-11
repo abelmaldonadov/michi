@@ -6,12 +6,12 @@ class Alert
         ` 
     }
 
-    showAlert(texto) {
+    showAlert(result) {
         document.querySelector(".alert").innerHTML = `
             <div class="alert_content">
                 <div class="alert_header"></div>
                 <div class="alert_body">
-                    <div><p>${texto}</p></div>
+                    <div><p>${result}</p></div>
                 </div>
                 <div class="alert_footer">
                     <button class="btn" id="ok">Ok</button>

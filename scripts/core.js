@@ -1,8 +1,6 @@
-localStorage.getItem("modo")
-localStorage.getItem("nombre")
-localStorage.getItem("ficha")
-
-console.log(localStorage.getItem("modo") + localStorage.getItem("nombre") + localStorage.getItem("ficha"))
+const modo = localStorage.getItem("modo")
+const name1 = localStorage.getItem("name1")
+const name2 = localStorage.getItem("name2")
 
 const HUMAN = "Humano"
 const BOOT = "Boot"
@@ -11,13 +9,19 @@ const O = "fichaO"
 const X = "fichaX"
 const T = 500
 
-const GANADOR = "Has ganado"
-const PERDEDOR = "Has perdido"
 const EMPATE = "Tenemos un empate"
 
 // ESTABLECER JUGADORES
-const PLAYER_1 = new Player("PLAYER 1",HUMAN,O)
-const PLAYER_2 = new Player("PLAYER 2",BOOT,X)
+const PLAYER_1 = new Player(
+    name1,
+    HUMAN,
+    O
+)
+const PLAYER_2 = new Player(
+    name2,
+    (modo == 1)?HUMAN:BOOT,
+    X
+)
 
 // CREAR PARTIDA
 const PARTIDA = new Partida(PLAYER_1,PLAYER_2)
@@ -26,6 +30,7 @@ document.querySelector("#start").addEventListener("click",iniciarPartida)
 const arrPos = document.querySelectorAll(".ficha")
 
 function iniciarPartida() {
+    validarLocalStorange()
     PARTIDA.limpiarTablero()
     PARTIDA.siguienteTurno()
     continuarPartida()
@@ -41,7 +46,7 @@ async function continuarPartida() {
 
         let ganador = PARTIDA.evaluarGanador()
         if (ganador) {
-            ALERT.showAlert(PARTIDA.getTurno().getName())
+            ALERT.showAlert(PARTIDA.getTurno().getWinText())
             return
         }
         if (obtenerPosDisp().length == 0) {
@@ -69,7 +74,7 @@ function jugarHumano(e) {
     if (JUGADA.jugarHuman(posSel)) {
         let ganador = PARTIDA.evaluarGanador()
         if (ganador) {
-            ALERT.showAlert(PARTIDA.getTurno().getName())
+            ALERT.showAlert(PARTIDA.getTurno().getWinText())
             return
         }
         if (obtenerPosDisp().length == 0) {
@@ -78,5 +83,11 @@ function jugarHumano(e) {
         }
         PARTIDA.siguienteTurno()
         continuarPartida()
+    }
+}
+
+function validarLocalStorange() {
+    if (modo == null) {
+        location.href = "index.html"
     }
 }

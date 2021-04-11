@@ -1,0 +1,10 @@
+.text{
+    width: 100%;
+    color: rgb(131, 151, 207);
+    border: none;
+    font-size: larger;
+    padding: 15px;
+}
+.text::placeholder{
+    color: rgb(209, 204, 204);
+}

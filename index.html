@@ -7,20 +7,47 @@
     <title>Michi</title>
 
     <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/form.css">
+    <link rel="stylesheet" href="style/button.css">
+    <link rel="stylesheet" href="style/text.css">
+    <link rel="stylesheet" href="style/radio.css">
 </head>
 <body>
     <section id="app">
-        <h2 class="titulo">Michi 1.0</h2>
+        
+        <div class="modal">
+            <div class="modal_content">
+                <h2 class="titulo">Michi 1.0</h2>
 
-        <!-- FORMULARIO -->
-        <form id="formDataPartida">
-            <input type="text" name="modo">
-            <input type="text" name="nombre">
-            <input type="text" name="ficha">
-            <input type="submit">
-        </form>
+                <!-- FORMULARIO -->
+                <div class="form">
+                    <form class="form_content" id="formDataPartida">
+                        <div class="form_item">
+                            <input type="radio" name="modo" id="p1VSp2" value="1" hidden checked>
+                            <label class="radio" for="p1VSp2">P1 VS P2</label>
+                            <input type="radio" name="modo" id="p1VSboot" value="2" hidden>
+                            <label class="radio" for="p1VSboot">P1 VS Boot</label>
+                        </div>
+                        
+                        <div class="form_item">
+                            <input class="text" type="text" name="name1" placeholder="Nombre del Player 1" maxlength="20" id="player1" required>
+                        </div>
+                        <div class="form_item">
+                            <input class="text" type="text" name="name2" placeholder="Nombre del Player 2" maxlength="20" id="player2" required>
+                        </div>
+
+                        <div class="form_item">
+                            <input class="btn btn_block" type="submit" value="Dibujar tablero">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         
     </section>
+    <script src="scripts/init/cambiarModo.js"></script>
+
     <script src="scripts/dataPartida.js"></script>
 </body>
 </html>

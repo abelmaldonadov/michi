@@ -1,0 +1,17 @@
+.radio{
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(131, 151, 207);
+    cursor: pointer;
+}
+.radio:hover{
+    background-color: rgb(161, 175, 214);
+}
+.radio:active{
+    background-color: rgb(84, 110, 179);
+}
+input[type="radio"]:checked + label{
+    background-color: rgb(104, 131, 204);
+}

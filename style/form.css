@@ -1,0 +1,16 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form_content{
+    margin: auto;
+    padding: 10px;
+}
+.form_item{
+    display: block;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

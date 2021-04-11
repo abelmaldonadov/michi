@@ -4,6 +4,7 @@ class Player
         this.name = name
         this.tipo = tipo
         this.ficha = ficha
+        this.winText = `${name} a ganado`
     }
     
     getName() {
@@ -14,5 +15,8 @@ class Player
     }
     getFicha() {
         return this.ficha
+    }
+    getWinText() {
+        return this.winText
     }
 }
