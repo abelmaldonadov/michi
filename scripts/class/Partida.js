@@ -22,6 +22,7 @@ class Partida
             this.turno = this.player_1
             this.oponente = this.player_2
         }
+        document.getElementById("turnoText").innerHTML = "Es el turno de " + this.turno.getName()
     }
 
     evaluarGanador() {

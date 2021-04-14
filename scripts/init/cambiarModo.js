@@ -7,6 +7,7 @@ function cambiarModoJuego() {
     if (modo1.checked) {
         document.getElementById("player2").disabled = false
     } else {
+        document.getElementById("player2").value = ""
         document.getElementById("player2").disabled = true
     }
 }
